@@ -1,5 +1,5 @@
 #!/bin/sh
-#assemble and preprocess all the sources files
+echo "Assemble and preprocess all the sources files..."
 
 pandoc text/pre.txt --lua-filter=epigraph.lua --to markdown | pandoc --top-level-division=chapter --to latex > latex/pre.tex
 pandoc text/intro.txt --lua-filter=epigraph.lua --to markdown | pandoc --top-level-division=chapter --to latex > latex/intro.tex
