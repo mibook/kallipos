@@ -8,7 +8,8 @@ Files are edited at their respective repos and then imported here:
 
 After cloning this repo run: `git submodule update --init --recursive`
 
-After editing a file in a submodule run: `git submodule update --remote --merge`
+After editing and commiting a file in a submodule folder run at the top folder the following command: 
+`git submodule update --remote --merge`
 
 The source files are read from the `text` folder,
 which is a git submodule, ie a link to another repo.
