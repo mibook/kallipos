@@ -1,0 +1,17 @@
+name: Example workflow
+on:
+  push:
+
+jobs:
+  texlive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v3
+        with:
+          packages: >
+            l3build latex latex-bin luatex latex-bin-dev xelatex
+      - name: Use TeX Live
+        run: ./make-latex
