@@ -20,4 +20,4 @@ jobs:
             scheme-basic latexmk collection-xetex
       - name: Use TeX Live
         run: |
-          ./make-book.sh
+          ./build-book.sh
