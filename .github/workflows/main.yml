@@ -21,3 +21,5 @@ jobs:
       - name: Use TeX Live
         run: |
           ./build-book.sh
+          cd book
+          latexmk -f -pdf -silent book.tex
