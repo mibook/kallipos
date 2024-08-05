@@ -8,9 +8,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install latest pandoc
-        uses: pandoc/actions/setup@{main}
-        with:
-          version: 2.19
+        uses: pandoc/actions/setup@v1
       - name: Run pandoc
         run: pandoc --version
       - name: Install TeX Live
