@@ -1,6 +1,5 @@
-name: Example workflow
-on:
-  push:
+name: Build the book
+on: workflow_dispatch
 
 jobs:
   texlive:
@@ -12,6 +11,7 @@ jobs:
         uses: zauguin/install-texlive@v3
         with:
           packages: >
-            l3build latex latex-bin luatex latex-bin-dev xelatex
+            scheme-basic l3build latex latex-bin luatex latex-bin-dev xelatex
       - name: Use TeX Live
-        run: ./make-latex
+        run: |
+          ./make-latex.sh
