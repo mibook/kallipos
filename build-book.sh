@@ -20,5 +20,4 @@ done
 
 sed -i 's+Figure+Εικόνα+g' ./book/ch0*
 
-latexmk -f -pdf -silent book.tex
 
