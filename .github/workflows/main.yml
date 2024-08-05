@@ -16,10 +16,7 @@ jobs:
       - name: Install Python
         uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
-          cache: 'pip' # caching pip dependencies
-      - name: Install pip
+      - name: Install pandoc-fignos
         run: pip install pandoc-fignos --user
       - name: Install TeX Live
         uses: zauguin/install-texlive@v3
