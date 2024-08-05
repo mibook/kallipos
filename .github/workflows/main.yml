@@ -21,6 +21,7 @@ jobs:
       - name: Use TeX Live
         run: |
           git submodule update --init --recursive
+          pip install pandoc-fignos --user
           ./build-book.sh
           cd book
           latexmk -f -pdf -silent book.tex
