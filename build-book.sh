@@ -18,6 +18,6 @@ for filename in text/apx*.txt; do
 done
 
 
-sed -i 's+Figure+Εικόνα+g' ./book/ch0*
+sed 's+Figure+Εικόνα+g' ./book/ch0*
 
 
