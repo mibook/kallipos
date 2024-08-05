@@ -11,7 +11,7 @@ jobs:
         uses: zauguin/install-texlive@v3
         with:
           packages: >
-            scheme-full xelatex
+            scheme-basic latexmk collection-xetex
       - name: Use TeX Live
         run: |
           ./make-latex.sh
