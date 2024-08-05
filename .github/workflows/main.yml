@@ -20,6 +20,7 @@ jobs:
             scheme-basic latexmk collection-xetex
       - name: Use TeX Live
         run: |
+          git submodule update --init --recursive
           ./build-book.sh
           cd book
           latexmk -f -pdf -silent book.tex
