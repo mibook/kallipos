@@ -13,6 +13,14 @@ jobs:
           version: 2.11
       - name: Run pandoc
         run: pandoc --version
+      - name: Install Python
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Install pip
+        run: pip install pandoc-fignos --user
       - name: Install TeX Live
         uses: zauguin/install-texlive@v3
         with:
@@ -21,7 +29,6 @@ jobs:
       - name: Use TeX Live
         run: |
           git submodule update --init --recursive
-          pip install pandoc-fignos --user
           ./build-book.sh
           cd book
           latexmk -f -pdf -silent book.tex
