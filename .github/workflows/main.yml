@@ -10,14 +10,15 @@ jobs:
       - name: Install pandoc
         uses: pandoc/actions/setup@v1
         with:
-          version: 2.11
+          version: 2.19.2
       - name: Run pandoc
         run: pandoc --version
-      - name: Install Python
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
       - name: Install pandoc-fignos
-        run: pip install pandoc-fignos --user
+        run: pip install pandoc-fignos
       - name: Install TeX Live
         uses: zauguin/install-texlive@v3
         with:
