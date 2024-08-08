@@ -21,7 +21,7 @@ jobs:
         uses: zauguin/install-texlive@v3
         with:
           packages: >
-            scheme-basic latexmk collection-xetex etoolbox euenc filehook
+            scheme-basic latexmk collection-xetex etoolbox euenc filehook fontspec makecmds polyglossia tipa xkeyval xunicode mktexlsr updmap-sys metalogo xltxtra sectsty ulem biblatex logreq csquotes tocloft biber hyphenat nowidow microtype titling emptypage float caption enumitem babel babel-greek bookmark dvipdfmx firstaid greek-fontenc hyperref 
       - name: Use TeX Live
         run: |
           git submodule update --init --recursive
