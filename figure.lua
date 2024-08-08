@@ -1,4 +1,6 @@
-
+--Pandoc Lua function adds caption and formats an image according to the standard markdown format
+--It reads the image caption and location from a yaml file located in the figures folder
+--It expects to find an (over)loaded Pandoc image tag with figure class and filename
 function Image(img)
       local stringify = pandoc.utils.stringify
       if img.classes:find('figure',1) then
