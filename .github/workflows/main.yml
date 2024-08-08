@@ -2,7 +2,7 @@ name: Build the book
 on: workflow_dispatch
 
 jobs:
-  build book:
+  build-book:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
