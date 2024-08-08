@@ -10,7 +10,7 @@ jobs:
       - name: Install pandoc v2 (fignos requirement)
         uses: pandoc/actions/setup@v1
         with:
-          version: 2.19.2
+          version: 2.11.4
       - name: Install python
         uses: actions/setup-python@v5
         with:
