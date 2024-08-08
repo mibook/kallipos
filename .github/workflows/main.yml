@@ -2,7 +2,7 @@ name: Build the book
 on: workflow_dispatch
 
 jobs:
-  texlive:
+  build book:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,6 +17,10 @@ jobs:
           python-version: '3.10' 
       - name: Install pandoc-fignos
         run: pip install pandoc-fignos
+      - name: Assemble latex files
+        run: |
+          git submodule update --init --recursive
+          ./build-book.sh
       - name: Install TeX Live
         uses: zauguin/install-texlive@v3
         with:
@@ -24,7 +28,5 @@ jobs:
             scheme-basic latexmk collection-xetex etoolbox euenc filehook fontspec makecmds polyglossia tipa xkeyval xunicode mktexlsr updmap-sys metalogo xltxtra sectsty ulem biblatex logreq csquotes tocloft biber hyphenat nowidow microtype titling emptypage float caption enumitem babel babel-greek bookmark dvipdfmx firstaid greek-fontenc hyperref 
       - name: Use TeX Live
         run: |
-          git submodule update --init --recursive
-          ./build-book.sh
           cd book
-          latexmk -f -pdf -silent book.tex
+          latexmk -f -xelatex -silent book.tex
