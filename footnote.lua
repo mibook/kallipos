@@ -3,8 +3,8 @@ function Note(el)
   stringify = pandoc.utils.stringify
   if #el.content == 1 then
     local ft = stringify(el.content[1]) 
-    if string.sub(ft,1,4) == "fig:" then
-        local fn = string.sub(ft,5)
+    if string.sub(ft,1,5) == "@fig:" then
+        local fn = string.sub(ft,6)
         --print(fn)
         local f = io.open("figures/" .. fn .. ".md", 'r')
         local doc = pandoc.read(f:read('*a'))
