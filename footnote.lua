@@ -1,4 +1,4 @@
-
+--Add figure title and license text to the figure reference
 function Note(el)
   stringify = pandoc.utils.stringify
   if #el.content == 1 then
